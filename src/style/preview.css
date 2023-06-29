@@ -1,0 +1,54 @@
+.card-preview {
+    margin: 30px;
+    position: relative;
+    width: 300px;
+    height: 187px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.bank-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 40px;
+}
+
+.card-details {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.preview-card-number {
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.preview-card-number {
+    font-family: monospace;
+}
+
+.card-holder {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.expiry {
+    font-size: 16px;
+    color: #888;
+}
+
+.payment-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 30px;
+    object-fit: contain;
+}
+

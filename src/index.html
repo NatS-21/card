@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Форма платежной карты</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/preview.css">
+</head>
+<body>
+
+<h1>Форма платежной карты</h1>
+<div class="form-container">
+  <div class="form-inner-container">
+  <form onsubmit="event.preventDefault();">
+  <label for="bank-name">Название банка</label><br>
+  <input class="form-field" type="text" id="bank-name" placeholder="Название банка" onchange="updateCardThumbnail()"><br><br>
+
+  <label for="payment-system">Тип платежной системы</label><br>
+  <input class="form-field" type="text" id="payment-system" placeholder="Тип платежной системы" onchange="updateCardThumbnail()"><br><br>
+
+  <label for="card-number">Номер карты</label><br>
+  <input class="form-field" type="number" id="card-number" maxlength="16" placeholder="#### #### #### ####" pattern="[0-9]{16}" onchange="updateCardThumbnail()"><br><br>
+
+  <label for="card-holder-name">Имя держателя карты</label><br>
+  <input class="form-field" type="text" id="card-holder-name" placeholder="IVANOV IVAN" onchange="updateCardThumbnail()"><br><br>
+
+  <label for="expiry-month">Месяц окончания карты</label><br>
+  <input class="form-field" type="number" id="expiry-month" placeholder="MM" pattern="[0-9]{1,2}" onchange="updateCardThumbnail()"><br><br>
+
+  <label for="expiry-year">Год окончания карты</label><br>
+  <input class="form-field" type="number" id="expiry-year" placeholder="YY" pattern="[0-9]{1-2}" onchange="updateCardThumbnail()"><br><br>
+
+    <button onclick="addCardToList()">Добавить карту</button>
+  </form></div>
+  <div class="card-preview">
+    <img src="./images/sber.png" id="preview-bank-logo" class="bank-logo">
+    <p id="preview-card-number" class="preview-card-number">0000 0000 0000 0000</p>
+    <div class="card-details">
+      <div id="card-holder" class="card-holder">Ivanov Ivan</div>
+      <div id="expiry" class="expiry">Exp: 06/25</div>
+    </div>
+    <img src="./images/visa.png" id="payment-logo" class="payment-logo">
+  </div>
+</div>
+
+<h2>Список карт:</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Название Банка</th>
+    <th>Платёжная система</th>
+    <th>Номер карты</th>
+    <th>Имя держателя карты</th>
+    <th>Окончание карты</th>
+  </tr>
+  </thead>
+  <tbody id="cards-table">
+  </tbody>
+</table>
+
+
+</body>
+</html>
